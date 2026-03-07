@@ -1,31 +1,47 @@
-# AI Usage Report (Assignment 1)
+# AI Usage Report – Assignment 2
 
-## Tools Used & Use Cases
-### Tool 1: ChatGPT
-- Used for: generating starter HTML/CSS/JS structure, theme toggle logic, and documentation templates.
-- Why: to speed up scaffolding and learn best practices (semantic HTML, accessibility basics, responsive layout).
+## AI Tools Used
 
-## Benefits & Challenges
-### Benefits
-- Helped me create a clean folder structure and plan features that match the rubric.
-- Helped me debug small issues (missing IDs, wrong file paths, etc.).
+### 1️⃣ ChatGPT
+Used for:
+- Designing interactive feature ideas
+- Implementing live project search functionality
+- Improving form validation logic
+- Debugging duplicate ID issues
+- Enhancing accessibility best practices
+- Improving documentation structure
 
-### Challenges / Limitations
-- Some generated code needed adjustments to match my file structure.
-- I had to double-check accessibility and make sure I understood the JavaScript logic.
+---
 
-## Learning Outcomes
-- I learned how to:
-  - Organize a front-end project into HTML/CSS/JS folders
-  - Use CSS variables for theming
-  - Use localStorage for saving user preferences
-  - Write clearer README and technical docs
+## How AI Assisted the Development
 
-## Responsible Use & Modifications
-- I reviewed all AI output line-by-line.
-- I renamed variables and simplified parts I didn’t understand.
-- I tested features in the browser and fixed issues (paths, layout, responsiveness).
-- I ensured the final result reflects  my understanding and matches the rubric requirements.
-I treated AI suggestions as drafts, not final answers. I tested all generated code,
-rewrote parts in my own words, and ensured the final structure reflected my understanding.
+AI was used as a development assistant to:
+- Suggest improvements beyond Assignment 1
+- Help structure modular JavaScript
+- Refactor validation logic
+- Improve clarity of user feedback
 
+---
+
+## Modifications & Understanding
+
+All AI-generated suggestions were:
+- Reviewed line-by-line
+- Tested in the browser
+- Modified to match my project structure
+- Adjusted to fit assignment requirements
+
+I ensured I understood:
+- DOM manipulation
+- Event listeners
+- localStorage behavior
+- Validation logic
+- Accessibility improvements
+
+---
+
+## Responsible AI Use
+
+AI was used to support learning and productivity, not to replace understanding.
+All final code reflects my comprehension and was manually tested before submission.
+The AI output served as a guide and draft, not a final solution.
