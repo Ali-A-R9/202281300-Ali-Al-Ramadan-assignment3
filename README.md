@@ -1,33 +1,64 @@
-# Assignment 1 – Foundation & AI Integration  
+# Assignment 2 – Interactive Features  
 ## Personal Portfolio Website
 
-This project is a responsive personal portfolio website developed as part of a web development course assignment. The goal of this assignment was to build a clean foundation using HTML, CSS, and JavaScript while responsibly integrating AI-assisted development tools.
-
-The website represents the starting point of my professional portfolio and will be expanded in later assignments.
+This project is an upgraded version of my Assignment 1 portfolio website.  
+The goal of Assignment 2 was to improve interactivity, user experience, and apply modern JavaScript techniques while maintaining clean structure and performance.
 
 ---
 
-## Features
+## 🚀 Project Overview
 
-- About Me section (short introduction + profile image)
-- Projects section (2 project cards with descriptions and GitHub links)
-- Contact form (Name, Email, Message) with JavaScript demo feedback (no backend)
+This responsive portfolio website includes dynamic content, form validation, data handling, and user feedback mechanisms.
+
+The project demonstrates practical front-end development skills using HTML, CSS, and Vanilla JavaScript.
+
+---
+
+## ✨ Features (Assignment 2 Enhancements)
+
+### 1️⃣ Dynamic Projects Section
+- Projects are stored in a JavaScript array
+- Projects are rendered dynamically into the DOM
+- Live search filtering updates projects as the user types
+- Displays “No projects found” empty state
+- Shows real-time project count
+
+### 2️⃣ Form Validation & User Feedback
+- Client-side validation for:
+  - Required fields
+  - Valid email format
+  - Minimum message length
+- Inline error messages under each field
+- `aria-invalid` for accessibility
+- Loading state ("Sending...")
+- Success confirmation message
+
+### 3️⃣ Data Handling
+- Theme preference stored using `localStorage`
+- Projects handled using JavaScript data structures
+- Form input processed dynamically
+
+### 4️⃣ Animations & UX
+- Smooth transitions
+- Hover effects
+- Styled error and success feedback
 - Responsive layout for desktop, tablet, and mobile
-- Light/Dark theme toggle with localStorage persistence
-- Accessible structure with semantic HTML and form labels
 
 ---
 
-## Tech Stack
+## 🛠️ Technologies Used
 
-- HTML5
-- CSS3 (Flexbox, Grid, CSS variables)
-- JavaScript (Vanilla JS)
+- HTML5 (Semantic structure)
+- CSS3 (Flexbox, Grid, CSS variables, transitions)
+- JavaScript (Vanilla JS, DOM manipulation, localStorage)
+- Git & GitHub
 
 ---
+
+## 📂 Folder Structure
+
 ```
-## Folder Structure
-assignment-1/
+assignment-2/
 │── index.html
 │── css/
 │ └── styles.css
@@ -39,53 +70,56 @@ assignment-1/
 │ ├── ai-usage-report.md
 │ └── technical-documentation.md
 │── README.md
+│── .gitignore
 ```
 
-## Setup Instructions (Run Locally)
+
+---
+
+## ▶️ Setup Instructions
 
 ### Option 1: Open Directly
-1. Download or clone this repository
+1. Download or clone the repository
 2. Open `index.html` in your browser
 
-### Option 2: Using VS Code Live Server (Recommended)
-1. Install the **Live Server** extension
+### Option 2: VS Code Live Server (Recommended)
+1. Install the Live Server extension
 2. Right-click `index.html`
 3. Select **Open with Live Server**
 
 ---
 
-## AI Usage Summary
+## 🤖 AI Usage Summary
 
 AI tools were used as development assistants to:
-- Help scaffold initial HTML/CSS/JS structure
-- Suggest improvements for layout and theme logic
-- Assist with documentation drafting
+- Help design interactive features
+- Improve form validation logic
+- Enhance accessibility and user feedback
+- Refactor JavaScript for clarity and structure
 
-All AI-generated code was reviewed, modified, tested, and fully understood before final submission.
+All AI-generated code was reviewed, tested, modified, and fully understood before final submission.
 
-Detailed explanation available in:
+Full details available in:
 `docs/ai-usage-report.md`
 
 ---
 
-## Documentation
+## 📌 Assignment Compliance
 
-- Technical Documentation: `docs/technical-documentation.md`
-- AI Usage Report: `docs/ai-usage-report.md`
-
----
-
-## Deployment
-
-This project can be deployed using:
-- GitHub Pages
-- Netlify
-- Vercel
+This project satisfies:
+- Dynamic content requirement
+- Data handling requirement
+- Animation/transition requirement
+- Error handling & user feedback requirement
+- AI integration documentation requirement
 
 ---
 
-## Academic Integrity Statement
+## 📄 Academic Integrity Statement
 
 This project was completed by me for academic purposes.  
-AI tools were used responsibly as learning aids and are fully documented.  
-All code was reviewed, modified, and understood before submission.
+AI tools were used responsibly and documented.  
+All code was reviewed, tested, and understood before submission.
+
+
+
