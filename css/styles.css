@@ -11,6 +11,9 @@
   --card: rgba(255, 255, 255, 0.75);
   --border: rgba(0, 0, 0, 0.06);
   --glow: rgba(225, 29, 72, 0.25);
+
+  --danger: #dc2626;
+  --success: #16a34a;
 }
 
 body.dark {
@@ -24,13 +27,16 @@ body.dark {
   --card: rgba(15, 23, 42, 0.65);
   --border: rgba(96, 165, 250, 0.2);
   --glow: rgba(96, 165, 250, 0.5);
+
+  --danger: #f87171;
+  --success: #4ade80;
 }
 
 /* ---------- GLOBAL ---------- */
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -38,7 +44,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
-  transition: all 0.4s ease;
+  transition: background 0.4s ease, color 0.4s ease;
   background-attachment: fixed;
 }
 
@@ -47,9 +53,45 @@ body {
   margin: auto;
 }
 
-.section {
-  padding: 100px 0;
+.section { padding: 100px 0; }
+
+/* ---------- ACCESSIBILITY HELPERS ---------- */
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  z-index: 9999;
 }
+.skip-link:focus { left: 12px; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* ---------- FADE IN ANIMATION ---------- */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ---------- GLASS CARDS ---------- */
 
@@ -90,6 +132,7 @@ body.dark .project-card:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 18px;
 }
 
 .nav-list {
@@ -97,6 +140,7 @@ body.dark .project-card:hover {
   display: flex;
   gap: 25px;
   padding: 0;
+  margin: 0;
 }
 
 .nav-list a {
@@ -118,29 +162,22 @@ body.dark .project-card:hover {
   transition: 0.3s ease;
 }
 
-.nav-list a:hover::after {
-  width: 100%;
-}
+.nav-list a:hover::after { width: 100%; }
 
 /* ---------- HERO ---------- */
 
-.hero-inner {
-  padding: 80px;
-  /* removed floating animation, might implement at a later stage */
-}
+.hero-inner { padding: 80px; }
 
-.hero-buttons {
+.hero-actions {
   display: flex;
   gap: 20px;
-  align-items: center;   
+  align-items: center;
   flex-wrap: wrap;
 }
 
 /* ---------- ABOUT ---------- */
 
-.about-card {
-  padding: 70px;
-}
+.about-card { padding: 70px; }
 
 .about-grid {
   display: grid;
@@ -157,10 +194,46 @@ body.dark .project-card:hover {
 
 /* ---------- PROJECTS ---------- */
 
+.projects-controls {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+  max-width: 520px;
+}
+
+#projectSearch {
+  width: 100%;
+  padding: 16px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+#projectSearch:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px var(--glow);
+  transform: translateY(-2px);
+}
+
+.projects-count {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.empty-state {
+  margin-top: 18px;
+  color: var(--muted);
+}
+
 .projects-grid {
   display: grid;
   gap: 40px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .project-card {
@@ -182,25 +255,19 @@ body.dark .project-card:hover {
   transition: 0.4s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-}
-
-.project-card:hover::before {
-  opacity: 1;
-}
+.project-card:hover { transform: translateY(-8px); }
+.project-card:hover::before { opacity: 1; }
 
 .project-title {
   font-size: 2rem;
   margin-bottom: 15px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
-  background-clip: text;             
-  -webkit-background-clip: text;     
-  color: transparent;                
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
   transition: 0.3s;
 }
-
 
 .project-card:hover .project-title {
   transform: translateY(-3px);
@@ -212,13 +279,31 @@ body.dark .project-card:hover {
   color: var(--muted);
 }
 
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 18px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-tag {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: rgba(0,0,0,0.02);
+}
+
 /* ---------- BUTTONS ---------- */
 
 .project-button,
 .btn-primary,
 .btn-secondary {
-  height: 52px;                
-  display: inline-flex;       
+  height: 52px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0 28px;
@@ -258,26 +343,6 @@ body.dark .project-card:hover {
   transform: translateY(-4px);
 }
 
-/* ---------- THEME TOGGLE ---------- */
-
-.theme-toggle {
-  height: 42px;
-  padding: 0 18px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background: var(--primary);
-  color: white;
-  box-shadow: 0 10px 30px var(--glow);
-}
-
 /* ---------- CONTACT FORM ---------- */
 
 .contact-form {
@@ -311,6 +376,36 @@ body.dark .project-card:hover {
   transform: translateY(-2px);
 }
 
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.15);
+}
+
+.error-msg {
+  margin: 8px 0 0 0;
+  color: var(--danger);
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+
+.form-status {
+  margin-top: 16px;
+  min-height: 1.2em;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.form-status.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-status.success { color: var(--success); }
+.form-status.error { color: var(--danger); }
+
 /* ---------- FOOTER ---------- */
 
 .site-footer {
@@ -323,21 +418,11 @@ body.dark .project-card:hover {
 /* ---------- RESPONSIVE ---------- */
 
 @media (max-width: 768px) {
-
-  .section {
-    padding: 60px 0;
-  }
+  .section { padding: 60px 0; }
 
   .header-inner {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-  }
-
-  .site-header h1 {
-    font-size: 1.3rem;
-    text-align: center;
-    line-height: 1.3;
   }
 
   .nav-list {
@@ -347,16 +432,9 @@ body.dark .project-card:hover {
     gap: 18px;
   }
 
-  .theme-toggle {
-    width: 100%;
-    max-width: 260px;
-  }
+  .hero-inner { padding: 40px 25px; }
 
-  .hero-inner {
-    padding: 40px 25px;
-  }
-
-  .hero-buttons {
+  .hero-actions {
     flex-direction: column;
     gap: 15px;
   }
@@ -382,6 +460,4 @@ body.dark .project-card:hover {
   .btn-secondary {
     width: 100%;
   }
-
 }
-
