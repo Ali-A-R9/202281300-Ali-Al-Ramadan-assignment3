@@ -617,7 +617,7 @@ button:disabled {
 
 .checkbox-label {
   display: flex;
-  align-items: flex-start;
+  align-items: center; 
   gap: 10px;
   cursor: pointer;
   font-weight: 500;
@@ -626,7 +626,7 @@ button:disabled {
 .checkbox-label input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  margin: 3px 0 0;
+  margin: 0; 
   flex-shrink: 0;
 }
 
