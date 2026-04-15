@@ -1,125 +1,166 @@
-# Assignment 2 – Interactive Features  
+# Assignment 3 – Advanced Functionality  
 ## Personal Portfolio Website
 
-This project is an upgraded version of my Assignment 1 portfolio website.  
-The goal of Assignment 2 was to improve interactivity, user experience, and apply modern JavaScript techniques while maintaining clean structure and performance.
+🌐 **Live Demo (GitHub Pages):**  
+https://ali-a-r9.github.io/202281300-Ali-Al-Ramadan-assignment3/
+
+🔗 **Repository Link:**  
+https://github.com/Ali-A-R9/202281300-Ali-Al-Ramadan-assignment3
 
 ---
 
-## 🚀 Project Overview
+## 📌 Project Description
 
-This responsive portfolio website includes dynamic content, form validation, data handling, and user feedback mechanisms.
+This project is an advanced version of my personal portfolio website built for Assignment 3.
 
-The project demonstrates practical front-end development skills using HTML, CSS, and Vanilla JavaScript.
+The goal of this assignment is to demonstrate advanced JavaScript functionality, API integration, state management, and improved user experience while maintaining clean structure and performance.
+
+The website is fully responsive, interactive, and dynamically updates content using real data from external sources.
 
 ---
 
-## ✨ Features (Assignment 2 Enhancements)
+## 🚀 Features
 
-### 1️⃣ Dynamic Projects Section
-- Projects are stored in a JavaScript array
-- Projects are rendered dynamically into the DOM
-- Live search filtering updates projects as the user types
-- Displays “No projects found” empty state
-- Shows real-time project count
+### 🔗 External API Integration
+- Connects to the **GitHub REST API**
+- Dynamically displays repositories
+- Shows:
+  - repository name
+  - description
+  - language
+  - stars ⭐
+  - last updated date
+- Includes **error handling** with fallback data if API fails
 
-### 2️⃣ Form Validation & User Feedback
-- Client-side validation for:
-  - Required fields
-  - Valid email format
-  - Minimum message length
-- Inline error messages under each field
-- `aria-invalid` for accessibility
-- Loading state ("Sending...")
-- Success confirmation message
+---
 
-### 3️⃣ Data Handling
-- Theme preference stored using `localStorage`
-- Projects handled using JavaScript data structures
-- Form input processed dynamically
+### 🧠 Complex Logic
+- Project system supports:
+  - search (by text)
+  - filtering (category + level)
+  - sorting (date + title)
+- Multi-step logic applied together
+- Contact form includes advanced validation rules
 
-### 4️⃣ Animations & UX
-- Smooth transitions
-- Hover effects
-- Styled error and success feedback
-- Responsive layout for desktop, tablet, and mobile
+---
+
+### 💾 State Management
+Using `localStorage`, the app remembers:
+
+- light/dark mode 🌙
+- visitor name 👤
+- About section visibility
+- Advanced filters visibility
+- GitHub section visibility
+
+---
+
+### ⚡ Performance Optimization
+- No unnecessary libraries (Vanilla JS only)
+- Lazy-loaded images
+- Efficient DOM updates
+- Reusable functions (no repeated logic)
+- Clean and optimized CSS
+
+---
+
+### 🎯 User Experience (Step-by-Step Guide)
+
+1. **Landing Section**
+   - View greeting message (changes based on time)
+   - See time spent on website
+
+2. **Personalization**
+   - Enter your name → click *Save Name*
+   - Website remembers you on future visits
+
+3. **Projects Section**
+   - Search projects using keywords
+   - Open *Advanced Filters*
+   - Filter by:
+     - category (Web / Desktop / Portfolio)
+     - level (Beginner / Advanced)
+   - Sort projects by:
+     - newest
+     - oldest
+     - title (A–Z / Z–A)
+
+4. **GitHub Section**
+   - Click *Show GitHub Section*
+   - Loads live repositories from GitHub API
+   - Click *Refresh* to reload data
+
+5. **Contact Form**
+   - Fill in all fields
+   - Must:
+     - enter valid email
+     - write message (15+ characters)
+     - check confirmation box
+   - Submit → shows success message
 
 ---
 
 ## 🛠️ Technologies Used
 
-- HTML5 (Semantic structure)
-- CSS3 (Flexbox, Grid, CSS variables, transitions)
-- JavaScript (Vanilla JS, DOM manipulation, localStorage)
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+- GitHub REST API
+- localStorage
 - Git & GitHub
 
 ---
 
-## 📂 Folder Structure
+## 📁 Folder Structure
 
+```text
+id-name-assignment3/
+├── README.md
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+├── assets/
+│   └── images/
+├── docs/
+│   ├── ai-usage-report.md
+│   └── technical-documentation.md
+└── .gitignore
 ```
-assignment-2/
-│── index.html
-│── css/
-│ └── styles.css
-│── js/
-│ └── script.js
-│── assets/
-│ └── images/
-│── docs/
-│ ├── ai-usage-report.md
-│ └── technical-documentation.md
-│── README.md
-│── .gitignore
-```
+## ⚙️ Setup Instructions 
 
+### Option 1: Open Live Website
+Simply open the deployed link:  
+https://ali-a-r9.github.io/202281300-Ali-Al-Ramadan-assignment3/
 
 ---
 
-## ▶️ Setup Instructions
+### Option 2: Run Locally (VS Code)
 
-### Option 1: Open Directly
-1. Download or clone the repository
-2. Open `index.html` in your browser
+```bash
+# 1. Clone repository
+git clone https://github.com/Ali-A-R9/202281300-Ali-Al-Ramadan-assignment3.git
 
-### Option 2: VS Code Live Server (Recommended)
-1. Install the Live Server extension
-2. Right-click `index.html`
-3. Select **Open with Live Server**
+# 2. Open folder
+cd 202281300-Ali-Al-Ramadan-assignment3
 
+# 3. Open in VS Code
+code .
+
+# 4. Run using Live Server
+Right click index.html → Open with Live Server
+```
 ---
 
-## 🤖 AI Usage Summary
+## 🤖 AI Usage (Summary)
 
-AI tools were used as development assistants to:
-- Help design interactive features
-- Improve form validation logic
-- Enhance accessibility and user feedback
-- Refactor JavaScript for clarity and structure
+AI tools were used to support development and learning during this assignment.
 
-All AI-generated code was reviewed, tested, modified, and fully understood before final submission.
+- **ChatGPT** was used for debugging, improving logic, and refining documentation.
+- **GitHub Copilot** helped with small code suggestions and faster development.
 
-Full details available in:
+All AI-generated content was reviewed, modified, and tested to ensure correctness and understanding.
+
+👉 Full details are provided in:
 `docs/ai-usage-report.md`
-
----
-
-## 📌 Assignment Compliance
-
-This project satisfies:
-- Dynamic content requirement
-- Data handling requirement
-- Animation/transition requirement
-- Error handling & user feedback requirement
-- AI integration documentation requirement
-
----
-
-## 📄 Academic Integrity Statement
-
-This project was completed by me for academic purposes.  
-AI tools were used responsibly and documented.  
-All code was reviewed, tested, and understood before submission.
-
-
-
